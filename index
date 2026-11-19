@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="theme-color" content="#2C200E">
+  <title>SI-KKP KPPN045 | Pencatatan & Pengawasan Kartu Kredit Pemerintah</title>
+
+  <!-- Favicon SVG Kartu Kredit Emas Metalik (Inline Data URI) -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='goldCard' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%23F7E49C'/%3E%3Cstop offset='45%25' stop-color='%23D4AF37'/%3E%3Cstop offset='100%25' stop-color='%238A6314'/%3E%3C/linearGradient%3E%3ClinearGradient id='chipGold' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%23FFF8DC'/%3E%3Cstop offset='100%25' stop-color='%23C89D3C'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect x='4' y='12' width='56' height='40' rx='7' fill='url(%23goldCard)' stroke='%235C431C' stroke-width='2'/%3E%3Crect x='11' y='21' width='12' height='9' rx='2' fill='url(%23chipGold)' stroke='%235C431C' stroke-width='1.2'/%3E%3Cline x1='15' y1='21' x2='15' y2='30' stroke='%235C431C' stroke-width='1'/%3E%3Cline x1='19' y1='21' x2='19' y2='30' stroke='%235C431C' stroke-width='1'/%3E%3Cline x1='11' y1='25.5' x2='23' y2='25.5' stroke='%235C431C' stroke-width='1'/%3E%3Crect x='11' y='36' width='24' height='3.5' rx='1.5' fill='%232C200E' opacity='0.75'/%3E%3Crect x='11' y='42' width='15' height='3' rx='1.5' fill='%232C200E' opacity='0.55'/%3E%3Crect x='41' y='37' width='13' height='8' rx='2' fill='%23003D79'/%3E%3C/svg%3E">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background-color: #2C200E;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    /* Layar pemuat awal sebelum Google Apps Script selesai render */
+    #splash-screen {
+      position: fixed;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #2C200E 0%, #4A3516 50%, #23190B 100%);
+      color: #FFF9EB;
+      z-index: 10;
+      transition: opacity 0.4s ease, visibility 0.4s ease;
+    }
+
+    #splash-screen.fade-out {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    .gold-spinner {
+      width: 44px;
+      height: 44px;
+      border: 3.5px solid rgba(246, 226, 159, 0.25);
+      border-top-color: #E5BD5B;
+      border-radius: 50%;
+      animation: spin 0.9s linear infinite;
+      margin-bottom: 14px;
+    }
+
+    .splash-title {
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      color: #F6E29F;
+    }
+
+    .splash-sub {
+      font-size: 12px;
+      color: #D8C59E;
+      margin-top: 4px;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    /* Frame penuh tanpa border */
+    iframe#app-frame {
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+      background-color: #FAF8F3;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="splash-screen">
+    <div class="gold-spinner"></div>
+    <div class="splash-title">SI-KKP KPPN045</div>
+    <div class="splash-sub">Memuat Sistem Kartu Kredit Pemerintah...</div>
+  </div>
+
+  <!-- GANTI URL DI BAWAH INI DENGAN URL WEB APP (/exec) GOOGLE APPS SCRIPT KAMU -->
+  <iframe
+    id="app-frame"
+    src="https://script.google.com/macros/s/AKfycbxVtXRvoCLnCZv1MYJ9rjoU8awR5x8n21WFKeWfipnTIwkJkuO_mSQ84ouUyJKqKQYcqA/exec"
+    title="SI-KKP KPPN045"
+    allow="clipboard-write; fullscreen"
+    onload="document.getElementById('splash-screen').classList.add('fade-out')">
+  </iframe>
+
+</body>
+</html>
